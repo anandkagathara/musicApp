@@ -11,12 +11,11 @@ const {
 
 const upload = require('../middlewares/upload');
 
+const audioUpload = upload([{ name: 'song', maxCount: 1 }, { name: 'image', maxCount: 1 }]);
 
-
-
-router.post("/audio", upload.single('image'), audioValidationRules(), create);
+router.post("/audio",audioUpload, create);
 router.get("/audio/:id", get);
-router.put("/audio/:id",  upload.single('image'),audioValidationRules(), update);
+router.put("/audio/:id",  audioUpload,audioValidationRules(), update);
 router.delete("/audio/:id", deleteAudio);
 router.get("/audio", list);
 

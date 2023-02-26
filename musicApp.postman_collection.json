@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "ce6392a3-94d0-4732-8cf9-89911e5f5fe5",
+		"name": "musicApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17901072"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"anand\",\r\n    \"email\":\"ananad@gmail.com\",\r\n    \"password\":\"Anand@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signIn",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emailOrUsername\":\"anand\",\r\n    \"password\":\"Anand@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "audioCreate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "reryuerwyerw",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/bholu/Downloads/78691.jpg"
+						},
+						{
+							"key": "description",
+							"value": "abs",
+							"type": "text"
+						},
+						{
+							"key": "song",
+							"type": "file",
+							"src": "/C:/Users/bholu/Downloads/file_example_MP3_5MG.mp3"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/audio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"audio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAudioByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/audio/63fb8718c6ab252d319a74eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"audio",
+						"63fb8718c6ab252d319a74eb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "audioUpdateByID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "pani pani",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "dfifhhiewhi",
+							"type": "text"
+						},
+						{
+							"key": "song",
+							"type": "file",
+							"src": "/C:/Users/bholu/Downloads/35.mp3"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/bholu/Downloads/image.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/audio/63fba081d61292b143477a29",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"audio",
+						"63fba081d61292b143477a29"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAudioByID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/audio/63fb8718c6ab252d319a74eb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"audio",
+						"63fb8718c6ab252d319a74eb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "audioList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/audio?page=5&limit=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"audio"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "5"
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

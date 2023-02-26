@@ -11,6 +11,10 @@ exports.signup = async (req, res) => {
       password: Joi.string().min(6).required(),
     });
 
+    const { error } = schema.validate(req.body);
+    if (error) {
+      throw new Error(error.details[0].message);
+    }
     const hashedPassword = await bcrypt.hash(password, 9);
 
     const user = {
@@ -19,10 +23,6 @@ exports.signup = async (req, res) => {
       password: hashedPassword,
     };
 
-    const { error } = schema.validate(req.body);
-    if (error) {
-      throw new Error(error.details[0].message);
-    }
     const findUserName = await User.findOne({ username: username });
     if (findUserName) {
       throw new Error("User already exists with this username");
